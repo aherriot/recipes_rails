@@ -1,21 +1,5 @@
-# PostgreSQL. Versions 8.2 and up are supported.
-#
-# Install the pg driver:
-#   gem install pg
-# On OS X with Homebrew:
-#   gem install pg -- --with-pg-config=/usr/local/bin/pg_config
-# On OS X with MacPorts:
-#   gem install pg -- --with-pg-config=/opt/local/lib/postgresql84/bin/pg_config
-# On Windows:
-#   gem install pg
-#       Choose the win32 build.
-#       Install PostgreSQL and put its /bin directory on your path.
-#
-# Configure Using Gemfile
-# gem 'pg'
-#
 default: &default
-  adapter: mysql2
+  adapter: postgresql
   encoding: unicode
   pool: 5
   socket: /var/run/mysqld/mysqld.sock
@@ -24,8 +8,8 @@ default: &default
 development:
   <<: *default
   database: recipes_dev
-  username: root
-  password: 
+  username: recipes_dev
+  password: recipes
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
