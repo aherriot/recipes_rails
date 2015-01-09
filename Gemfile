@@ -1,4 +1,4 @@
-ruby '2.0.0'
+ruby '2.1.2'
 source 'https://rubygems.org'
 
 
@@ -33,10 +33,11 @@ gem 'spring',        group: :development
 # Use unicorn as the app server
 gem 'unicorn'
 
-gem 'rails_12factor'
+group :development do
+  gem 'guard-livereload', require: false
+end
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+gem 'rails_12factor'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
